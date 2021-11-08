@@ -136,19 +136,6 @@ header h2{
 
 }
 
-
-
-@media screen and (min-width: 600px) {
-	.splash-text {
-		columns: 1;
-		column-gap: 2em;
-	}
-
-	.splash-text p {
-		padding: 0;
-	}
-}
-
 /* Buckets section */
 
 .wrapper {
@@ -209,25 +196,11 @@ li {
 }
 
 
+
 /*--------------------------------------------------------------
 Use flex to create a three-bucket layout
 --------------------------------------------------------------*/
 
-@media screen and (min-width: 700px) {
-	@supports (display: flex) {
-
-		.buckets ul {
-			display: flex;
-			justify-content: space-around;
-			flex-wrap: wrap;
-		}
-
-		.buckets li {
-			width: 31%;
-		}
-
-	}
-}
 
 /*--------------------------------------------------------------
 Basic responsive layout for all browsers:
@@ -244,6 +217,7 @@ CSS Grid layout for modern browsers:
 
 /* Check for CSS Grid support: */
 @supports (grid-area: auto) {
+
 
 	/* Enable grid for viewports 600px and wider: */
 	@media screen and (min-width: 600px) {
@@ -266,17 +240,83 @@ CSS Grid layout for modern browsers:
 		.more-content{
 			grid-column: 2/4;
 		}	
-		  .wrapper {
-			grid-template-columns: repeat(3, 1fr);
-			grid-auto-rows: auto;
-			gap: 10px;
-			
-			
-		  }	
-		  .wrapper li.portrait {
-			grid-row-end: span 2;		
-		  }
+		.wrapper {
+		grid-template-columns: repeat(2, 1fr);
+		grid-auto-rows: auto;
+		gap: 10px;
+		
+		
+		}	
+		.wrapper li.portrait {
+		grid-row-end: span 2;		
+		}
 
+		.splash-text {
+			columns: 1;
+			column-gap: 2em;
+		}
+	
+		.splash-text p {
+			padding: 0;
+		}
+
+		/* Use automatic grid placement + span to let each item span two columns: */
+		.twin,
+		.colophon aside {
+			grid-column: 2 span;
+		}
+
+	}
+
+	
+	@media screen and (min-width: 1000px) {
+		
+		
+		/*@supports (display: flex) {
+
+			.buckets ul {
+				display: flex;
+				justify-content: space-around;
+				flex-wrap: wrap;
+			}
+
+			.buckets li {
+				width: 31%;
+			}
+
+		}*/
+
+		/* Four-column layout: Two center columns have total width of 50em: */
+		.main-area > *,
+		.colophon {
+			display: grid;
+			grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+			
+		}
+		/* Center items by placing them in the two center columns: */
+		.splash-content,
+		.more-content{
+			grid-column: 2/4;
+		}	
+		.wrapper {
+		grid-template-columns: repeat(3, 1fr);
+		grid-auto-rows: auto;
+		gap: 10px;
+		
+		
+		}	
+		.wrapper li.portrait {
+		grid-row-end: span 2;		
+		}
+
+		.splash-text {
+			columns: 1;
+			column-gap: 2em;
+		}
+	
+		.splash-text p {
+			padding: 0;
+		}
 
 		/* Use automatic grid placement + span to let each item span two columns: */
 		.twin,
