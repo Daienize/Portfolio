@@ -101,7 +101,11 @@ header h2{
 
 .menu-icon {
 	font-size: 2em;                    /* Set size of hamburger menu icon */
-	color: #fff;                       /* Set color of hamburger menu icon */
+	/*color: #fff;                       /* Set color of hamburger menu icon */
+	color: #343434;                      /* Set color for navigation links */
+
+	cursor: pointer;
+
 }
 nav {
 	position: absolute;                /* Absolute positions nav on page */
@@ -116,12 +120,16 @@ nav ul {
 	list-style-type: none;             /* Get rid of bullets on unordered list (navigation links) */
 	max-height: 0em;                   /* Section containing navigation links should be collapsed until hamburger menu icon is toggled */
 	overflow: hidden;                  /* Content of collapsed section should be hidden */
-	transition: max-height 0.5s;       /* Transition between opening and closing of navigation should take 0.5 seconds */
+	transition: max-height 1s;       /* Transition between opening and closing of navigation should take 0.5 seconds */
+	padding: 12px;
+	margin: 0;
 }
 nav ul li a {
 	display: block;                    /* Links should be displayed as block (each link taking up its required space on a new line) */
 	color: #343434;                      /* Set color for navigation links */
 	text-decoration: none;             /* Get rid of underlines on navigation links */
+	padding: .75em;             /* Set padding for each navigation link */
+
 }
 nav ul li a:hover, nav ul li a:focus {
 	color:white;
@@ -177,7 +185,6 @@ nav ul li a:hover, nav ul li a:focus {
 
 .wrapper li {
 	font-size: 11px;
-	margin-bottom: 1em;
 	background: white;
 	list-style-type: none;
 	
