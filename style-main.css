@@ -73,10 +73,7 @@ img {
 	width: 100%;
 	height: auto;
 }
-
-
 /* Promo section */
-
 header{
     background: #cb997e;
     /*color:white;*/
@@ -99,16 +96,46 @@ header h2{
 	font-size: 45px;
 }
 
-.site-title {
-	margin: 0;
+
+/*Nav section*/
+
+.menu-icon {
+	font-size: 2em;                    /* Set size of hamburger menu icon */
+	color: #fff;                       /* Set color of hamburger menu icon */
+}
+nav {
+	position: absolute;                /* Absolute positions nav on page */
+	top: 21em;                        /* Add space to top of screen so links are below hamburger icon */
+	left:0;                            /* Navigation links should appear on left side of screen */
+	width: 100%;                       /* Similar to .menu-wrap, nav should fill entire horizontal space */
+	background: #cb997e;
+
+
+}
+nav ul {
+	list-style-type: none;             /* Get rid of bullets on unordered list (navigation links) */
+	max-height: 0em;                   /* Section containing navigation links should be collapsed until hamburger menu icon is toggled */
+	overflow: hidden;                  /* Content of collapsed section should be hidden */
+	transition: max-height 0.5s;       /* Transition between opening and closing of navigation should take 0.5 seconds */
+}
+nav ul li a {
+	display: block;                    /* Links should be displayed as block (each link taking up its required space on a new line) */
+	color: #343434;                      /* Set color for navigation links */
+	text-decoration: none;             /* Get rid of underlines on navigation links */
+}
+nav ul li a:hover, nav ul li a:focus {
+	color:white;
+	/*color: #e75;      */                 /* Change color of link when hovered over or focused on */
+}
+#checkbox {
+	display: none;                     /* Although the checkbox functionality is needed, we don't want to see the actual checkbox */
+}
+#checkbox:checked ~ nav ul {
+	max-height: 11em;                  /* When the checkbox is checked, expand the height of ul to reveal navigation */
 }
 
-.site-title {
-	margin-top: -1em;
-	margin-bottom: 3em;
 
-	
-}
+
 
 /* Splash section */
 
@@ -143,12 +170,12 @@ header h2{
 	background: #3E454C;
 }
 
-ul {
+.wrapper ul {
 	margin: 0;
 	padding: 0;
 }
 
-li {
+.wrapper li {
 	font-size: 11px;
 	margin-bottom: 1em;
 	background: white;
@@ -265,6 +292,26 @@ CSS Grid layout for modern browsers:
 		.colophon aside {
 			grid-column: 2 span;
 		}
+		
+		.menu-icon {
+			display: none;                /* Hide hamburger menu icon on larger screens */
+		}
+		nav {
+			position: relative;
+			top: -1em; 
+			text-align: center;
+                   
+
+		}
+		nav ul {
+			max-height: 1em;           /* Adjust max-height to fit content horizontally rather than vertically */
+			padding: 15px 0;
+		}
+		nav ul li {
+			display: inline-block;        /* Display list items as an inline-block (on a single line) */
+			padding-left: 1em;            /* Add padding between horizontal links */
+		}
+
 
 	}
 
