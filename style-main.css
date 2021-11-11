@@ -75,11 +75,13 @@ img {
 }
 /* Promo section */
 header{
-    background: #cb997e;
-    /*color:white;*/
+    background: #808000
+	
+    /*color:#cb997e;*/
 }
 header h1, header h2{
-	color: #343434;
+	color:#333305;
+	/*color: #343434;*/
     font-style: italic;  
 	font-family: 'Caveat', cursive;
 	font-weight: 400;
@@ -112,7 +114,7 @@ nav {
 	top: 21em;                        /* Add space to top of screen so links are below hamburger icon */
 	left:0;                            /* Navigation links should appear on left side of screen */
 	width: 100%;                       /* Similar to .menu-wrap, nav should fill entire horizontal space */
-	background: #cb997e;
+	background: #808000;
 
 
 }
@@ -148,15 +150,17 @@ nav ul li a:hover, nav ul li a:focus {
 /* Splash section */
 
 .splash {
-	background: #FFF6E5;
-	padding-bottom: 2em;
+	background: #FFF6E5;	
 	text-align: center;
+	margin: 0;
+	padding: 0;
 
 }
 
 .splash-content {
 	padding: 1.5em;
 }
+
 
 /*Bucklet*/
 .bucket{
@@ -175,7 +179,8 @@ nav ul li a:hover, nav ul li a:focus {
 
 .wrapper {
 	padding: 2em 1em 1em;
-	background: #3E454C;
+	background: #FFF6E5;
+	margin: 0;
 }
 
 .wrapper ul {
@@ -215,7 +220,8 @@ nav ul li a:hover, nav ul li a:focus {
 /* Colophon section */
 .colophon {
 	padding: 2em;
-	background: hsl(0, 0%, 10%);
+	background: #333305;
+	/*hsl(0, 0%, 10%);*/
 	color: white;
 	text-align: center;
 }
@@ -242,7 +248,7 @@ Basic responsive layout for all browsers:
 
 .site {
 	max-width: 50em;
-	margin: 0 auto;
+	margin: 0;
 }
 
 /*--------------------------------------------------------------
@@ -275,7 +281,7 @@ CSS Grid layout for modern browsers:
 			grid-column: 2/4;
 		}	
 		.wrapper {
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, minmax(auto, 25em));
 		grid-auto-rows: auto;
 		gap: 10px;
 		
@@ -305,14 +311,14 @@ CSS Grid layout for modern browsers:
 		}
 		nav {
 			position: relative;
-			top: -1em; 
+			top: -.5em; 
 			text-align: center;
                    
 
 		}
 		nav ul {
 			max-height: 1em;           /* Adjust max-height to fit content horizontally rather than vertically */
-			padding: 15px 0;
+			padding: 18px 0;
 		}
 		nav ul li {
 			display: inline-block;        /* Display list items as an inline-block (on a single line) */
